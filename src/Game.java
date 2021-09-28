@@ -40,6 +40,23 @@ public class Game {
                 //The sum is...
                 sum = rafleCup.getSum();
 
+                //Reset
+                pointsGiven = 0;
+                if(playerTurn) {
+                    playerTurn = false;
+                }
+                else
+                {
+                    playerTurn = true;
+                }
+
+                if(player1.getScore() > 39) {
+                    System.out.println("Player 1 has won the game!");
+                }
+                if(player2.getScore() > 39) {
+                    System.out.println("Player 2 has won the game!");
+                }
+
 
             }
         }
