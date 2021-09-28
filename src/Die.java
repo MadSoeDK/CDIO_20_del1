@@ -9,12 +9,9 @@ public class Die {
     private final int MAXVALUE=6;
     private int facevalue;
 
-    public Die (){
+    public int getFacevalue() {
         facevalue = rand.nextInt(MAXVALUE)+1;
         System.out.println(facevalue);
-    }
-
-    public int getFacevalue() {
         return facevalue;
     }
 }
