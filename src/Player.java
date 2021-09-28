@@ -1,7 +1,7 @@
 public class Player {
-    int score = 0;
-    int sum = 0;
-    private void increaseScore() {
+    private int score = 0;
+
+    public void increaseScore() {
         score++;
     }
     int getScore() {
