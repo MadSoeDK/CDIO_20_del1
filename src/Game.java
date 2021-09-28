@@ -4,6 +4,5 @@ public class Game {
         int TurnIndicator=0;
         int Sum=0;
 
-
     }
 }
