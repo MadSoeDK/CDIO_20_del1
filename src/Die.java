@@ -7,7 +7,7 @@ public class Die {
 
     // Initialize Variables
     private final int MAXVALUE=6;
-    private int facevalue= rand.nextInt(MAXVALUE)+1;
+    private int facevalue;
 
     public Die (){
         facevalue = rand.nextInt(MAXVALUE)+1;
