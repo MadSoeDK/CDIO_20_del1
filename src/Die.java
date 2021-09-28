@@ -1,7 +1,17 @@
+import java.util.Random;
+
 public class Die {
-    public static void main(String[] args) {
-        //Initialize Variables
-        int FaceValue=1;
-        int size=6;
+
+    // Initialize Random Object
+    Random rand = new Random();
+
+    // Initialize Variables
+    final int MAXVALUE=6;
+    int facevalue=rand.nextInt(MAXVALUE)+1;
+
+    int rollDie (){
+        facevalue=rand.nextInt(MAXVALUE)+1;
+        System.out.println(facevalue);
+        return facevalue;
     }
 }
