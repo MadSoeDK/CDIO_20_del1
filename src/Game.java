@@ -8,7 +8,7 @@ public class Game {
         boolean playerTurn = true;
 
         //Create Cup object
-        Cup RafleCup = new Cup();
+        Cup rafleCup = new Cup();
 
         //Create Player objects
         Player player1 = new Player();
@@ -35,7 +35,7 @@ public class Game {
                 System.out.println("Player score: " + player2.getScore());
 
                 //Roll Cup Content
-                RafleCup.rollQuantity();
+                rafleCup.getSum();
 
                 //The sum is...
                 sum = rafleCup.getSum();
