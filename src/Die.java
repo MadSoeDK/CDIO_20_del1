@@ -6,12 +6,15 @@ public class Die {
     Random rand = new Random();
 
     // Initialize Variables
-    final int MAXVALUE=6;
-    int facevalue=rand.nextInt(MAXVALUE)+1;
+    private final int MAXVALUE=6;
+    private int facevalue;
 
-    int rollDie (){
-        facevalue=rand.nextInt(MAXVALUE)+1;
+    public Die (){
+        facevalue = rand.nextInt(MAXVALUE)+1;
         System.out.println(facevalue);
+    }
+
+    public int getFacevalue() {
         return facevalue;
     }
 }
