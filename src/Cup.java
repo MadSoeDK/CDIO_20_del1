@@ -13,8 +13,9 @@ public class Cup {
         Die2 = new Die();
     }
 
-    int getSum() {
+    public int getSum() {
         sum = Die1.getFacevalue() + Die2.getFacevalue();
+        System.out.println(sum);
         return sum;
     }
 }
