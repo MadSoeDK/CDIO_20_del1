@@ -15,43 +15,44 @@ public class Game {
         Player player1 = new Player();
         Player player2 = new Player();
 
-        //Create Keyboard Input Scanner
-        System.out.println("Player 1 Starts: Press Enter to Roll Dice");
+        //Create Keyboard Input Scanner & Start Game
         Scanner input = new Scanner(System.in);
+        System.out.println("How to Win: Roll a pair while you have 40 or more points!");
+        System.out.println("Player 1 Starts: Press Enter to Roll Dice");
         input.nextLine();
 
-        //Playing until winner is declared
-        while (player1.getScore() < 40 && player2.getScore() < 40) {
+        //Loop forever until a player has 40+ points and rolled a pair. (Is done by break statements)
+        while (1<2) {
 
             //The sum is...
             sum = rafleCup.getSum();
 
             if (playerTurn==true) {
-                System.out.println("Increasing Player 1 score:");
                 while (pointsGiven < sum) {
                     player1.increaseScore();
                     pointsGiven++;
                 }
+                System.out.println("Increasing Player 1 score:");
                 System.out.println("Player score: " + player1.getScore());
             }
             else
             {
                 //Player 2's turn
-                System.out.println("Increasing Player 2's score:");
                 while(pointsGiven < sum) {
                     player2.increaseScore();
                     pointsGiven++;
                 }
+                System.out.println("Increasing Player 2's score:");
                 System.out.println("Player score: " + player2.getScore());
             }
 
             // Check for Winner
-            if(player1.getScore() > 39) {
-                System.out.println("Player 1 has won the game!");
+            if(player1.getScore() > 39 && rafleCup.getPair()==1) {
+                System.out.println("Player 1 HAS ROLLED A PAIR AND WON THE GAME!");
                 break;
             }
-            if(player2.getScore() > 39) {
-                System.out.println("Player 2 has won the game!");
+            if(player2.getScore() > 39 && rafleCup.getPair()==1) {
+                System.out.println("Player 2 HAS ROLLED A PAIR AND WON THE GAME!");
                 break;
             }
 
