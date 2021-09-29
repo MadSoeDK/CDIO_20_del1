@@ -32,8 +32,17 @@ public class Game {
                     player1.increaseScore();
                     pointsGiven++;
                 }
-                System.out.println("Increasing Player 1 score:");
-                System.out.println("Player score: " + player1.getScore());
+                // If you rolled double 1's, remove all points
+                if (sum==2){
+                    System.out.println("HAHA, You rolled a pair of 1's");
+                    System.out.println("Player score: 0");
+                    player1.setScoreZero();
+                }
+                else
+                {
+                    System.out.println("Increasing Player 1 score:");
+                    System.out.println("Player score: " + player1.getScore());
+                }
             }
             else
             {
@@ -42,16 +51,25 @@ public class Game {
                     player2.increaseScore();
                     pointsGiven++;
                 }
-                System.out.println("Increasing Player 2's score:");
-                System.out.println("Player score: " + player2.getScore());
+                // If you rolled double 1's, remove all points
+                if (sum==2){
+                    System.out.println("HAHA, You rolled a pair of 1's");
+                    System.out.println("Player score: 0");
+                    player2.setScoreZero();
+                }
+                else
+                {
+                    System.out.println("Increasing Player 2's score:");
+                    System.out.println("Player score: " + player2.getScore());
+                }
             }
 
             // Check for Winner
-            if(player1.getScore() > 39 && rafleCup.getPair()==1) {
+            if(player1.getScore() > 39 && rafleCup.getPair()==1 && playerTurn==true) {
                 System.out.println("Player 1 HAS ROLLED A PAIR AND WON THE GAME!");
                 break;
             }
-            if(player2.getScore() > 39 && rafleCup.getPair()==1) {
+            if(player2.getScore() > 39 && rafleCup.getPair()==1 && playerTurn==false) {
                 System.out.println("Player 2 HAS ROLLED A PAIR AND WON THE GAME!");
                 break;
             }

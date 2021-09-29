@@ -7,5 +7,8 @@ public class Player {
     int getScore() {
         return score;
     }
+    void setScoreZero() {
+        score=0;
+    }
 
 }
