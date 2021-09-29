@@ -3,7 +3,7 @@ import java.lang.Math;
 public class Game {
     public static void main(String[] args) {
         // Initialize Variables/Attributes.
-        int sum = 0;
+        int sum = 1;
         int pointsGiven = 0;
         boolean playerTurn = true;
 
@@ -16,11 +16,16 @@ public class Game {
 
         //Playing until winner is declared
         while (player1.getScore() < 40 && player2.getScore() < 40) {
-            if (playerTurn) {
+
+            //The sum is...
+            sum = rafleCup.getSum();
+
+            if (playerTurn==true) {
                 System.out.println("Increasing Player 1 score:");
                 while (pointsGiven < sum) {
                     player1.increaseScore();
                     pointsGiven++;
+                    //System.out.println("While løkke aktiveret");
                 }
                 System.out.println("Player score: " + player1.getScore());
             }
@@ -33,32 +38,25 @@ public class Game {
                     pointsGiven++;
                 }
                 System.out.println("Player score: " + player2.getScore());
-
-                //Roll Cup Content
-                rafleCup.getSum();
-
-                //The sum is...
-                sum = rafleCup.getSum();
-
-                //Reset
-                pointsGiven = 0;
-                if(playerTurn) {
-                    playerTurn = false;
-                }
-                else
-                {
-                    playerTurn = true;
-                }
-
-                if(player1.getScore() > 39) {
-                    System.out.println("Player 1 has won the game!");
-                }
-                if(player2.getScore() > 39) {
-                    System.out.println("Player 2 has won the game!");
-                }
-
-
             }
+
+            //Reset
+            pointsGiven = 0;
+            if(playerTurn==true) {
+                playerTurn = false;
+            }
+            else
+            {
+                playerTurn = true;
+            }
+
+            if(player1.getScore() > 39) {
+                System.out.println("Player 1 has won the game!");
+            }
+            if(player2.getScore() > 39) {
+                System.out.println("Player 2 has won the game!");
+            }
+
         }
     }
 }
