@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.util.Scanner;
 
 public class Game {
     public static void main(String[] args) {
@@ -13,6 +14,11 @@ public class Game {
         //Create Player objects
         Player player1 = new Player();
         Player player2 = new Player();
+
+        //Create Keyboard Input Scanner
+        System.out.println("Press Enter to Roll Dice");
+        Scanner input = new Scanner(System.in);
+        input.nextLine();
 
         //Playing until winner is declared
         while (player1.getScore() < 40 && player2.getScore() < 40) {
@@ -39,6 +45,19 @@ public class Game {
                 }
                 System.out.println("Player score: " + player2.getScore());
             }
+            // Check for Winner
+            if(player1.getScore() > 39) {
+                System.out.println("Player 1 has won the game!");
+                break;
+            }
+            if(player2.getScore() > 39) {
+                System.out.println("Player 2 has won the game!");
+                break;
+            }
+
+            // Confirm end of turn
+            System.out.println("Turn Completed, Press Enter for next turn");
+            input.nextLine();
 
             //Reset
             pointsGiven = 0;
@@ -49,14 +68,6 @@ public class Game {
             {
                 playerTurn = true;
             }
-
-            if(player1.getScore() > 39) {
-                System.out.println("Player 1 has won the game!");
-            }
-            if(player2.getScore() > 39) {
-                System.out.println("Player 2 has won the game!");
-            }
-
         }
     }
 }
