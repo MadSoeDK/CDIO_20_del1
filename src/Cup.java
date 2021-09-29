@@ -3,6 +3,10 @@ public class Cup {
     // Initialize Variables
     private final int QUANTITY=2;
     private int sum;
+    private int pair;
+    // What did the die show
+    private int facevalue1;
+    private int facevalue2;
 
     Die Die1;
     Die Die2;
@@ -14,9 +18,23 @@ public class Cup {
     }
 
     public int getSum() {
-        sum = Die1.getFacevalue() + Die2.getFacevalue();
-        System.out.println(sum);
+        facevalue1 = Die1.getFacevalue();
+        facevalue2 = Die2.getFacevalue();
+        sum = facevalue1+facevalue2;
+        //System.out.println("Their sum is: "+sum);
         return sum;
+    }
+
+    public int getPair() {
+        if (facevalue1==facevalue2)
+        {
+            pair=1;
+        }
+        else
+        {
+            pair=0;
+        }
+        return pair;
     }
 }
 

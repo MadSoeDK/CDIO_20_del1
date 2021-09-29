@@ -16,7 +16,7 @@ public class Game {
         Player player2 = new Player();
 
         //Create Keyboard Input Scanner
-        System.out.println("Press Enter to Roll Dice");
+        System.out.println("Player 1 Starts: Press Enter to Roll Dice");
         Scanner input = new Scanner(System.in);
         input.nextLine();
 
@@ -31,7 +31,6 @@ public class Game {
                 while (pointsGiven < sum) {
                     player1.increaseScore();
                     pointsGiven++;
-                    //System.out.println("While løkke aktiveret");
                 }
                 System.out.println("Player score: " + player1.getScore());
             }
@@ -45,6 +44,7 @@ public class Game {
                 }
                 System.out.println("Player score: " + player2.getScore());
             }
+
             // Check for Winner
             if(player1.getScore() > 39) {
                 System.out.println("Player 1 has won the game!");
@@ -55,18 +55,27 @@ public class Game {
                 break;
             }
 
-            // Confirm end of turn
-            System.out.println("Turn Completed, Press Enter for next turn");
-            input.nextLine();
-
             //Reset
             pointsGiven = 0;
-            if(playerTurn==true) {
-                playerTurn = false;
+
+            // Switch Player turns, only if no pair was rolled
+            if(rafleCup.getPair()==1){
+                // If a pair was rolled
+                System.out.println("YOU ROLLED A PAIR! PRESS ENTER TO GO AGAIN!");
+                input.nextLine();
             }
             else
             {
-                playerTurn = true;
+                // If no pair was rolled, Switch
+                if(playerTurn==true) {
+                    playerTurn = false;
+                }
+                else
+                {
+                    playerTurn = true;
+                }
+                System.out.println("Turn Completed, Press Enter for next players turn");
+                input.nextLine();
             }
         }
     }
