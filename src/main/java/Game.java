@@ -1,8 +1,13 @@
+import desktop_resources.GUI;
 import java.lang.Math;
+import desktop_fields.Field;;
+import desktop_fields.*;
 import java.util.Scanner;
+import java.awt.*;
 
 public class Game {
     public static void main(String[] args) {
+
         // Initialize Variables/Attributes.
         int sum = 1;
         int pointsGiven = 0;
@@ -15,17 +20,21 @@ public class Game {
         Player player1 = new Player();
         Player player2 = new Player();
 
+        //GUI - Tilføjer to spillere (Player 1 og Player 2)
+        GUI.addPlayer("Player1", 0);
+        GUI.addPlayer("Player2", 0);
+
         //Create Keyboard Input Scanner & Start Game
         Scanner input = new Scanner(System.in);
-        System.out.println("How to Win: Roll a pair while you have 40 or more points!");
-        System.out.println("Player 1 Starts: Press Enter to Roll Dice");
-        input.nextLine();
+        GUI.showMessage("How to Win: Roll a pair while you have 40 or more points!");
+        GUI.showMessage("Player 1 Starts: Press button 'Roll' to Roll Dice after 'OK'");
+        GUI.getUserButtonPressed("What are you waiting for? Roll to begin!","Roll");
 
         //Loop forever until a player has 40+ points and rolled a pair. (Is done by break statements)
         while (1<2) {
-
             //The sum is...
             sum = rafleCup.getSum();
+            GUI.setDice(rafleCup.getFacevalue1(),rafleCup.getFacevalue2());
 
             if (playerTurn==true) {
                 while (pointsGiven < sum) {
@@ -34,14 +43,15 @@ public class Game {
                 }
                 // If you rolled double 1's, remove all points
                 if (sum==2){
-                    System.out.println("HAHA, You rolled a pair of 1's");
-                    System.out.println("Player score: 0");
+                    GUI.showMessage("HAHA, You rolled a pair of 1's");
+                    GUI.showMessage("Player score: 0");
                     player1.setScoreZero();
                 }
                 else
                 {
-                    System.out.println("Increasing Player 1 score:");
-                    System.out.println("Player score: " + player1.getScore());
+                    GUI.showMessage("Increasing Player 1 score:");
+                    GUI.showMessage("Player score: " + player1.getScore());
+                    GUI.setBalance("Player1", player1.getScore());
                 }
             }
             else
@@ -53,24 +63,25 @@ public class Game {
                 }
                 // If you rolled double 1's, remove all points
                 if (sum==2){
-                    System.out.println("HAHA, You rolled a pair of 1's");
-                    System.out.println("Player score: 0");
+                    GUI.showMessage("HAHA, You rolled a pair of 1's");
+                    GUI.showMessage("Player score: 0");
                     player2.setScoreZero();
                 }
                 else
                 {
-                    System.out.println("Increasing Player 2's score:");
-                    System.out.println("Player score: " + player2.getScore());
+                    GUI.showMessage("Increasing Player 2's score:");
+                    GUI.showMessage("Player score: " + player2.getScore());
+                    GUI.setBalance("Player2", player2.getScore());
                 }
             }
 
             // Check for Winner
             if(player1.getScore() > 39 && rafleCup.getPair()==1 && playerTurn==true) {
-                System.out.println("Player 1 HAS ROLLED A PAIR AND WON THE GAME!");
+                GUI.showMessage("Player 1 HAS ROLLED A PAIR AND WON THE GAME!");
                 break;
             }
             if(player2.getScore() > 39 && rafleCup.getPair()==1 && playerTurn==false) {
-                System.out.println("Player 2 HAS ROLLED A PAIR AND WON THE GAME!");
+                GUI.showMessage("Player 2 HAS ROLLED A PAIR AND WON THE GAME!");
                 break;
             }
 
@@ -80,8 +91,8 @@ public class Game {
             // Switch Player turns, only if no pair was rolled
             if(rafleCup.getPair()==1){
                 // If a pair was rolled
-                System.out.println("YOU ROLLED A PAIR! PRESS ENTER TO GO AGAIN!");
-                input.nextLine();
+                GUI.showMessage("YOU ROLLED A PAIR! PRESS ENTER TO GO AGAIN!");
+                GUI.getUserButtonPressed("Roll","Roll");
             }
             else
             {
@@ -93,8 +104,9 @@ public class Game {
                 {
                     playerTurn = true;
                 }
-                System.out.println("Turn Completed, Press Enter for next players turn");
-                input.nextLine();
+                GUI.showMessage("Turn Completed, Press Enter for next players turn");
+                GUI.getUserButtonPressed("Roll","Roll");
+
             }
         }
     }

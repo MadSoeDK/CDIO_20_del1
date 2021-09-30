@@ -24,6 +24,12 @@ public class Cup {
         //System.out.println("Their sum is: "+sum);
         return sum;
     }
+    public int getFacevalue1() {
+        return facevalue1;
+    }
+    public int getFacevalue2() {
+        return facevalue2;
+    }
 
     public int getPair() {
         if (facevalue1==facevalue2)
