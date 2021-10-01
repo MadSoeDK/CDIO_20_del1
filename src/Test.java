@@ -17,9 +17,9 @@ public class Test {
         Cup rafleCup = new Cup();
 
         //Throw dice 1000 times with forloop. Check value and thereafter count corrosponding variable +1
-        for (int i = 0; i < 1000; i++) {
-            i = rafleCup.getSum();
-            switch (i) {
+        for (int i = 0; i < 10000; i++) {
+            int j = rafleCup.getSum();
+            switch (j) {
                 case 2:
                     nr2++;
                     break;
@@ -56,18 +56,18 @@ public class Test {
                 default:
                     System.out.println("Error");
             }
-            System.out.println("Så kan gange er værdierne af øjnene registreret over 1000 kast");
-            System.out.println("2: " + nr2);
-            System.out.println("3: " + nr3);
-            System.out.println("4: " + nr4);
-            System.out.println("5: " + nr5);
-            System.out.println("6: " + nr6);
-            System.out.println("7: " + nr7);
-            System.out.println("8: " + nr8);
-            System.out.println("9: " + nr9);
-            System.out.println("10: " + nr10);
-            System.out.println("11: " + nr11);
-            System.out.println("12: " + nr12);
         }
+        System.out.println("Så kan gange er værdierne af øjnene registreret over 1000 kast");
+        System.out.println("2: " + nr2 + " (" + nr2/100 + "%)");
+        System.out.println("3: " + nr3 + " (" + nr3/100 + "%)");
+        System.out.println("4: " + nr4 + " (" + nr4/100 + "%)");
+        System.out.println("5: " + nr5 + " (" + nr5/100 + "%)");
+        System.out.println("6: " + nr6 + " (" + nr6/100 + "%)");
+        System.out.println("7: " + nr7 + " (" + nr7/100 + "%)");
+        System.out.println("8: " + nr8 + " (" + nr8/100 + "%)");
+        System.out.println("9: " + nr9 + " (" + nr9/100 + "%)");
+        System.out.println("10: " + nr10 + " (" + nr10/100 + "%)");
+        System.out.println("11: " + nr11 + " (" + nr11/100 + "%)");
+        System.out.println("12: " + nr12 + " (" + nr12/100 + "%)");
     }
 }
