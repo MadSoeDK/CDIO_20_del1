@@ -16,10 +16,11 @@ public class Test {
         //Create Cup object
         Cup rafleCup = new Cup();
 
-        //Throw dice 1000 times with forloop. Check value and thereafter count corrosponding variable +1
+        //Throw dice 1000 times with for loop.
         for (int i = 0; i < 1000; i++) {
-            int j = rafleCup.getSum();
-            switch (j) {
+            int sum = rafleCup.getSum();
+            //Check sum and thereafter count corresponding variable +1
+            switch (sum) {
                 case 2:
                     nr2++;
                     break;
@@ -57,6 +58,8 @@ public class Test {
                     System.out.println("Error");
             }
         }
+
+        //Print values for each variable count
         System.out.println("Så kan gange er værdierne af øjnene registreret over 1000 kast");
         System.out.println("2: " + nr2 + " (" + nr2/10 + "%)");
         System.out.println("3: " + nr3 + " (" + nr3/10 + "%)");
