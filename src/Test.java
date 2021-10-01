@@ -1,23 +1,23 @@
 public class Test {
     public static void main(String[] args) {
         // Initialize Variables/Attributes.
-        int nr2 = 0;
-        int nr3 = 0;
-        int nr4 = 0;
-        int nr5 = 0;
-        int nr6 = 0;
-        int nr7 = 0;
-        int nr8 = 0;
-        int nr9 = 0;
-        int nr10 = 0;
-        int nr11 = 0;
-        int nr12 = 0;
+        float nr2 = 0;
+        float nr3 = 0;
+        float nr4 = 0;
+        float nr5 = 0;
+        float nr6 = 0;
+        float nr7 = 0;
+        float nr8 = 0;
+        float nr9 = 0;
+        float nr10 = 0;
+        float nr11 = 0;
+        float nr12 = 0;
 
         //Create Cup object
         Cup rafleCup = new Cup();
 
         //Throw dice 1000 times with forloop. Check value and thereafter count corrosponding variable +1
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 1000; i++) {
             int j = rafleCup.getSum();
             switch (j) {
                 case 2:
@@ -58,16 +58,16 @@ public class Test {
             }
         }
         System.out.println("Så kan gange er værdierne af øjnene registreret over 1000 kast");
-        System.out.println("2: " + nr2 + " (" + nr2/100 + "%)");
-        System.out.println("3: " + nr3 + " (" + nr3/100 + "%)");
-        System.out.println("4: " + nr4 + " (" + nr4/100 + "%)");
-        System.out.println("5: " + nr5 + " (" + nr5/100 + "%)");
-        System.out.println("6: " + nr6 + " (" + nr6/100 + "%)");
-        System.out.println("7: " + nr7 + " (" + nr7/100 + "%)");
-        System.out.println("8: " + nr8 + " (" + nr8/100 + "%)");
-        System.out.println("9: " + nr9 + " (" + nr9/100 + "%)");
-        System.out.println("10: " + nr10 + " (" + nr10/100 + "%)");
-        System.out.println("11: " + nr11 + " (" + nr11/100 + "%)");
-        System.out.println("12: " + nr12 + " (" + nr12/100 + "%)");
+        System.out.println("2: " + nr2 + " (" + nr2/10 + "%)");
+        System.out.println("3: " + nr3 + " (" + nr3/10 + "%)");
+        System.out.println("4: " + nr4 + " (" + nr4/10 + "%)");
+        System.out.println("5: " + nr5 + " (" + nr5/10 + "%)");
+        System.out.println("6: " + nr6 + " (" + nr6/10 + "%)");
+        System.out.println("7: " + nr7 + " (" + nr7/10 + "%)");
+        System.out.println("8: " + nr8 + " (" + nr8/10 + "%)");
+        System.out.println("9: " + nr9 + " (" + nr9/10 + "%)");
+        System.out.println("10: " + nr10 + " (" + nr10/10 + "%)");
+        System.out.println("11: " + nr11 + " (" + nr11/10 + "%)");
+        System.out.println("12: " + nr12 + " (" + nr12/10 + "%)");
     }
 }
