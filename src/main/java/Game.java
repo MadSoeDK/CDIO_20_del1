@@ -1,9 +1,5 @@
 import desktop_resources.GUI;
-import java.lang.Math;
-import desktop_fields.Field;;
-import desktop_fields.*;
 import java.util.Scanner;
-import java.awt.*;
 
 public class Game {
     public static void main(String[] args) {
